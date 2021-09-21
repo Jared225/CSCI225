@@ -23,15 +23,36 @@
 <div class="form">
 
     <form action="">
+        <p>
+        First Name
         <input type="text" placeholder="anonymous" name="fname" required>
+        </p>
+        <p>
+        Last Name
         <input type="text" placeholder="anonymous" name="lname" required>
+        </p>
+        <p>
+        Email
         <input type="email" placeholder="name@domain.com" name="mail">
-        
+        </p>
+        <p>
+        Date of Birth
+        <input type="date" name="birthdate">
+        </p>
+        <p>
+        Time and Day of Submission
+        <input type="datetime" name="timesub">
+        </p>
+        <p>
         <input type="radio" name="work" value="recomend"> Yes, I would recomend this Website.
         <input type="radio" name="work" value="norecomend"> No, I would not recommend this Website.
-
+        </p>
         <fieldset>
         <legend>Web Browser</legend>
+        <p>           
+             Favorite Website:
+        </p>
+        
         <select name="favwebsite">
             <option value="ie"> Internet Explorer</option>
             <option value="firefox">FireFox</option>
@@ -44,15 +65,22 @@
             <option value="time">Time</option>
         </select>
         <p>
+            <input type="color" name="favcolor">
+        </p>
+        <p>
+            <input type="range" min="0" max="10" value="5" step="1" name="power" list="power"> 
+        </p>
+        <p>
             <textarea name="comment" cols="30" rows="10"></textarea>
         </p>
         <p>
         <input type="submit" name="submit" value="submit data">
         </p>
 
+  
         </fieldset>
 
-        <input type="typerange" min="1" max="10" value="5">
+
     </form>
 
 
