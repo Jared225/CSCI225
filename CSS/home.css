@@ -58,17 +58,30 @@ a:hover{
     footer{
         background-color: rgb(156, 185, 174);
     }
-    #portfolio{
+    .portfolio{
         padding: 10px;
         border-right: blue;
         border-bottom-style: 3px solid #fff;
     }
-    #schedule{
+    .schedule{
         padding: 10px;
         border-right: blue;
         border-bottom-style: 3px solid #fff;
     }
-    #Contact{
+    .assignment{
+        position: absolute;
+        top: 100px;
+        right:0;
+    }
+
+    .Introduction {
+        position: fixed;
+    }
+.Introduction img{
+    float: right;
+}
+    
+    .Contact{
         padding: 10px;
         border-right: red;
         border-bottom-style: 3px solid #fff;
@@ -123,3 +136,8 @@ a:hover{
     table:hover{
         border-collapse: collapse;
     }
+
+
+    
+
+

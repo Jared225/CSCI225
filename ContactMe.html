@@ -2,58 +2,105 @@
 
 <head>
     <title>ContactMe</title>
+    <link rel="stylesheet" href=" css/contact.css ">
+
+    
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
+<body>
+    <div class=""> <!-- background color -->
+    <div class="navbar p-3 mb-2 bg-primary text-white" id="zen-contact">
+        <ul>
+            <li><a href="https://usca.edu/" >USC Aikens main website</a></li>
+            <li><a href="#Good Food">Good Food</a></li>
+            <li><a href="#form">Form</a></li>
+        </ul>
+        </div>
+    </div>
+
+    
+    <div class="Tags">
+
+        <a name="Good Food" class="text-success"><h3>Good Food</h3></a>
+    
+        <iframe width="560" height="315"
+    
+        src="https://www.youtube.com/embed/b1pzmq_SwpE"
+    
+        title="You Tube video player" frameborder="0"
+    
+        class="rounded-circle border border-success"
+    
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    
+        </iframe>
+    
+        </div>
 
 
+<div class="form form-group">
+    <a name="form"></a>
 
-
-<div class="Tags">
-    <a name="Good Food"><h3>Good Food</h3></a>
-    <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/b1pzmq_SwpE" 
-    title="YouTube video player" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
-        
-       
-      
-</div>
-
-<div class="form">
-
-    <form action="">
-        <p>
+    <form action="" >
+        <div >
+        <p class="font-weight-bold">
         First Name
-        <input type="text" placeholder="anonymous" name="fname" required>
+        <input class = "form-control" type="text" placeholder="anonymous" name="fname" required>
         </p>
-        <p>
+    </div>
+    <div >
+        <p class="font-weight-bold">
         Last Name
-        <input type="text" placeholder="anonymous" name="lname" required>
+        <input class = "form-control" type="text" placeholder="anonymous" name="lname" required>
         </p>
-        <p>
+    </div>
+    <div >
+        <p class="font-weight-bold">
+            <small class="form-text text-muted">Your Password</small>
+        </p>
+    </div>
+    <div>
+        <p class="font-weight-bold">
         Email
-        <input type="email" placeholder="name@domain.com" name="mail">
+        <input class = "form-control" type="email" placeholder="name@domain.com" name="mail">          <!-- do I need to add a label -->
         </p>
-        <p>
+    </div>
+    <div>
+        <p class="font-weight-bold">
         Date of Birth
-        <input type="date" name="birthdate">
+        <input class = "form-control" type="date" name="birthdate">
         </p>
-        <p>
+    </div>
+    <div >
+        <p class="font-weight-bold">
         Time and Day of Submission
-        <input type="datetime" name="timesub">
+        <input class = "form-control" type="datetime" name="timesub">
         </p>
+    </div>
+    <div class="form-check"> 
         <p>
-        <input type="radio" name="work" value="recomend"> Yes, I would recomend this Website.
-        <input type="radio" name="work" value="norecomend"> No, I would not recommend this Website.
+        <input class = "form-check-input" type="radio" name="work" id="work1" value="recomend"/>
+        <label class="form-check-label" for="work1"> Yes, I would recomend this Website. </label>
         </p>
+    </div>
+    <div class="form-check">
+        <P>
+        <input class = "form-check-input" type="radio" name="work" id="work2" value="norecomend"/> 
+        <label class="form-check-label" for="work2"> No, I would not recommend this Website.</label>
+        </p>
+    </div>
         <fieldset>
+            
         <legend>Web Browser</legend>
         <p>           
              Favorite Website:
         </p>
         
-        <select name="favwebsite">
+        <select class = "form-control" name="favwebsite" >
             <option value="ie"> Internet Explorer</option>
             <option value="firefox">FireFox</option>
             <option value="chrome">Chrome</option>
@@ -68,13 +115,13 @@
             <input type="color" name="favcolor">
         </p>
         <p>
-            <input type="range" min="0" max="10" value="5" step="1" name="power" list="power"> 
+            <input class="form-range" type="range" min="0" max="10" value="5" step="1" name="power" list="power"> 
         </p>
         <p>
-            <textarea name="comment" cols="30" rows="10"></textarea>
+            <textarea class = "form-control" name="comment" cols="30" rows="10"></textarea>
         </p>
         <p>
-        <input type="submit" name="submit" value="submit data">
+        <input class="input-group mb-3" type="submit" name="submit" value="submit data">
         </p>
 
   
@@ -87,5 +134,5 @@
 
 </div>
 
-
+</body>
 </html>
