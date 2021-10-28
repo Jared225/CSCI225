@@ -112,22 +112,22 @@
                 var ans = weight*703/(height * height);
                 document.getElementById('result').innerHTML=ans.toString();
                 
-                if(ans >= 28){//over
+                if(ans >= 25 && ans <= 29.9){//over
                    document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(1.5,1)'}],{duration:3000,fill:"forwards"}); 
-                   alert("You are in the overweight category");
+                   alert("You are in the Overweight category");
                    window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
-                }else if (ans > 19.5){//normal
+                }else if (ans >= 18.5 && ans <= 24.9){//normal
                     document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(0.1,1)'}],{duration:3000,fill:"forwards"});
-                    alert("You are in the overweight category");
-                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
-                }else if (ans >= 18.5){//under
+                    alert("You are in the Normal category");
+                   
+                }else if (ans < 18.5){//under
                     document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(0.2,1)'}],{duration:3000,fill:"forwards"}); 
-                    alert("You are in the overweight category");
-                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                    alert("You are in the Underweight category");
+                   
                 }else if (ans >= 30){//obesity
                     document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(2.5,1)'}],{duration:3000,fill:"forwards"});
-                    alert("You are in the overweight category");
-                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                    alert("You are in the Obisity category");
+                   
                 }
                 
 
