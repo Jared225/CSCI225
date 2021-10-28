@@ -1,0 +1,145 @@
+<!Doctype html>
+
+<head>
+    <title>CSCI225 BMI Calculator of Jared Robinson</title>
+    
+</head>
+
+<body>
+<div class="cal">
+    <h1>English BMI Calculator</h1>
+    <form action="">
+        <p>
+            <label>Users Name
+                <input type="text" id="na">
+            </label>
+        </p>
+
+        <p id="message">
+
+        </p>
+
+    </form>
+    <script>
+        function hello(){
+            var name = document.getElementById('na').value;
+
+            //ouput
+            document.getElementById('message').textContent="Hey " + name + " Thanks for using the JR's BMI calculator";
+        }
+        var nE = document.getElementById('na');
+        nE.addEventListener('blur',hello,false);
+    </script>
+
+
+
+
+
+    <p>
+        <label> Weight in Pounds
+            <input type="text" name="po"> Pounds
+
+        </label>
+    </p>
+    <p>
+        <label> Heignt in Inches
+            <input type="text" name="in"> Inches
+        </label>
+    </p>
+    <p>
+        <select id="age" onchange="getage(this)"> //getage is not defined
+
+            <option>Age Selection</option>
+            
+            <option>0-19</option>
+            
+            <option>20-30</option>
+            
+            <option>31-40</option>
+            
+            <option>41-50</option>
+            
+            <option>51-60</option>
+            
+            <option>61-70</option>
+            
+            <option>71-80</option>
+            
+            <option>81-90</option>
+            
+            <option>91-100</option>
+            
+            <option>100+</option>
+            
+            </select>
+            
+            Please select your age
+            
+            </p>
+            
+            <p id="time"></p>
+            
+            <script>
+            
+            function getage(element) {
+                console.log('Get Age called');
+                var yearsOld = element.options[element.selectedIndex].text;
+                if(yearsOld == "0-19"){
+                    alert("If you are under 20 years of age, please use the BMI percentile chart: https://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf"); // Change alert to document.write if you want.
+                }
+            }
+            </script>
+ 
+
+    <p>
+        <input type="button" value="Compute BMI" id = "bmi"> 
+        <br><br>
+        <label id="result">?</label>
+    </p>
+    <img src="img/Female_Mii.png" id="mii">
+    <script>
+        document.getElementById('bmi').addEventListener('click',add);
+        
+
+            function add(){
+                //input
+                var iE1 = document.getElementsByName('po')[0];
+                var iE2 = document.getElementsByName('in')[0];
+    
+                var weight =parseInt(iE1.value);
+                var height =parseFloat(iE2.value);
+     
+                var ans = weight*703/(height * height);
+                document.getElementById('result').innerHTML=ans.toString();
+                
+                if(ans >= 28){//over
+                   document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(1.5,1)'}],{duration:3000,fill:"forwards"}); 
+                   alert("You are in the overweight category");
+                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                }else if (ans > 19.5){//normal
+                    document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(0.1,1)'}],{duration:3000,fill:"forwards"});
+                    alert("You are in the overweight category");
+                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                }else if (ans >= 18.5){//under
+                    document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(0.2,1)'}],{duration:3000,fill:"forwards"}); 
+                    alert("You are in the overweight category");
+                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                }else if (ans >= 30){//obesity
+                    document.getElementById('mii').animate([{transform:'scale(0.2,1)'},{transform:'scale(2.5,1)'}],{duration:3000,fill:"forwards"});
+                    alert("You are in the overweight category");
+                   window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm");
+                }
+                
+
+
+
+                
+           }
+        </script>
+</div>
+
+
+
+
+</body>
+</html>
