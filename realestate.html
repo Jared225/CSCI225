@@ -209,11 +209,23 @@
                         result += "<tr> <th>Date</th> <th>Interest</th> <th>Principal</th> <th>Balance</th> </tr>";
 
                         var i;
-                        for(i = 0; i <= ter; i++){
+                        for(i = 0; i < ter; i++){
                             
-                            balance2 = balance - principlePaidPerMonth;
-                            result += "<tr> <td>" + yearSelect + "</td> <td>" + intrestPaidPerMonth + "</td> <td>" + principlePaidPerMonth + "</td> <td>" + balance2 + "</td> </tr>";
+                            var interperyear = 0;
+                            var principlePaidPerYear = 0;
+                            for( var r = 1; r <= 12; r++){
+                                interpermonth = balance * monIR;
+                                principlePaidPerMonth = monP - interpermonth;
+                                balance = balance - principlePaidPerMonth;
+                                interperyear += interpermonth;
+                                principlePaidPerYear += principlePaidPerMonth;
+
+                            }
+
+                            //balance2 = balance - principlePaidPerMonth;
                             yearSelect++;
+                            result += "<tr> <td>" + yearSelect + "</td> <td>" + interperyear + "</td> <td>" + principlePaidPerYear + "</td> <td>" + balance + "</td> </tr>";
+                           
 
                         }
 
@@ -252,6 +264,7 @@
 
 
             </script>
+            
 
         </form>
 
