@@ -1,0 +1,36 @@
+{
+    padding: 0;
+    margin: 0;
+}
+/*
+body
+{
+    background-image: url(img/Estate.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+*/
+.menu-bar 
+{
+    text-align: left;
+}
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: rgb(154, 236, 223);
+}
+.menu-bar ul li
+{
+    background: rgb(23, 24, 23);
+    width: 50px;
+    border: 1px solid #fff;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px;
+    padding: 15px;
+    float: center;
+    text-align: center;
+}

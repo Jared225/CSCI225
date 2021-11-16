@@ -1,0 +1,263 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="css/real.css">
+    <!-- Jquery library   ---->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script defer src="js/script.js"></script>
+
+</head>
+
+<body background="img/Estate.jpg">
+    <div class="menu-bar">
+        <ul>
+            <li>
+                <button>Buy</button>
+            </li>
+            <li>
+                <button>SALE</button>
+            </li>
+            <li>
+                <input type="button" value="LOAN" id="hide">
+            </li>
+            <li>
+                <button>ABOUT</button>
+            </li>
+
+
+        </ul>
+
+
+    </div>
+    <script>
+        document.getElementById("hide").addEventListener('click', show_hide);
+        var h;
+        function show_hide() {
+            /*
+            if(h==1)
+            {
+                document.getElementById("loan").style.display="inline";
+                return h=0
+            }
+            else{
+                document.getElementById("loan").style.display="none";
+                return h=1;
+            }*/
+            $("#loan").toggle();
+        }
+    </script>
+
+    <div id="loan">
+
+        <form action="">
+
+            <p>
+
+                <label> Loan Amount
+
+                    <input type="text" id="amount"> $
+
+                </label>
+
+            </p>
+
+            <p>
+
+                <label> Interest rate (annual)
+
+                    <input type="text" id="interest"> %
+
+                </label>
+
+            </p>
+
+            <p>
+
+                <label> Loan term(in Years)
+
+                    <input type="text" id="term"> Years
+
+                </label>
+
+            </p>
+
+            <p> Start Date:
+
+                <select id="month" > //getage is not defined
+
+                    <option>January</option>
+
+                    <option>February</option>
+
+                    <option>March</option>
+
+                    <option>April</option>
+
+                    <option>May</option>
+
+                    <option>June</option>
+
+                    <option>July</option>
+
+                    <option>August</option>
+
+                    <option>September</option>
+
+                    <option>October</option>
+
+                    <option>Novemeber</option>
+
+                    <option>December</option>
+
+                </select>
+
+                <select id="year" > //getage is not defined
+
+                    <option>2011</option>
+
+                    <option>2012</option>
+
+                    <option>2013</option>
+
+                    <option>2014</option>
+
+                    <option>2015</option>
+
+                    <option>2016</option>
+
+                    <option>2017</option>
+
+                    <option>2018</option>
+
+                    <option>2019</option>
+
+                </select>
+
+            </p>
+
+            <p>
+
+                <select id="resultby" > //getage is not defined
+
+                    <option>Year</option>
+
+                    <option>Month</option>
+
+                </select>
+
+            </p>
+
+            <p>
+
+                <input type="button" value="Calculate" id="cal">
+
+                <label id="result"></label>
+                <label id="result2"></label>
+
+            </p>
+
+            <script>
+                document.getElementById("cal").addEventListener('click', add);
+
+                function add() {
+
+                    //input
+                    var iE1 = document.getElementById("amount").value;
+                    //var iE1 = document.getElementbyId('amount').value;
+
+
+                    var iE2 = document.getElementById('interest').value;
+
+                    var iE3 = document.getElementById('term').value;
+
+                    var yearSelect = document.getElementById('year').value;
+
+                    var a = parseFloat(iE1);
+
+                    var it = parseFloat(iE2);
+
+                    var ter = parseFloat(iE3);
+                   
+                    var balance = a;
+
+                    //var numM = ter*12;
+
+                    var monIR = it / 12;
+
+                    var monP = a * (monIR) / (1 - Math.pow(1 + monIR, -ter * 12));
+
+                    var intrestPaidPerMonth = balance * monIR;
+
+                    var principlePaidPerMonth = monP - intrestPaidPerMonth; 
+
+                    var balance2;
+
+                    var result = monP.toString();
+
+             
+
+                    // loop through every year
+                    // loop through every month 
+                    //      interpermonth= balance * monIR
+                    //      principle = monin - interjpermonth
+                    //      balance = blance - principle  //j torial 
+
+                    document.getElementById('result').innerHTML = " MonthlyPayment = " + monP;
+                    var result = "<table>";
+                        result += "<tr> <th>Date</th> <th>Interest</th> <th>Principal</th> <th>Balance</th> </tr>";
+
+                        var i;
+                        for(i = 0; i <= ter; i++){
+                            
+                            balance2 = balance - principlePaidPerMonth;
+                            result += "<tr> <td>" + yearSelect + "</td> <td>" + intrestPaidPerMonth + "</td> <td>" + principlePaidPerMonth + "</td> <td>" + balance2 + "</td> </tr>";
+                            yearSelect++;
+
+                        }
+
+                        result += "</table>";
+
+                        document.getElementById('result2').innerHTML = result;
+
+                   /* result += "<table>";
+
+                    var N = 5;
+
+                    for (var i = 1; i <= 9; i++) {
+
+                        result += "<tr>";
+
+                        for (var j = 1; j <= 9; j++) {
+
+                            var isquare = i * j;
+
+                            result += "<td>" + i + "x" + j + "= " + isquare + "</td>";
+
+                        }
+
+                        result += "</tr>";
+
+                    }
+
+                    result += "</table>";
+                    document.getElementById('result').innerHTML = result;
+                    */
+                    
+
+                }
+
+
+
+
+            </script>
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>
